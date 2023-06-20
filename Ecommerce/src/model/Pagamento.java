@@ -1,5 +1,11 @@
 package model;
-
+/** Documentação
+ * 
+ * Esta classe organiza e gerencia os dados do pagamento
+ * 
+ * @author Nicolas Augusto Gazaniga
+ *
+ */
 public class Pagamento {
     private String forma;
     private int parcelamento;

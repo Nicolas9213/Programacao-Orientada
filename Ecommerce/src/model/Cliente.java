@@ -1,14 +1,14 @@
 package model;
-
-import java.util.Date;
 /** Documentação
+ * 
+ * Esta classe organiza e gerencia os dados do cliente
  * 
  * @author Nicolas Augusto Gazaniga
  *
  */
 public class Cliente {
 	private String nome;
-	private Date dataNascimento;
+	private String dataNascimento;
 	private String cpf;
 	private String endereco;
 	private String telefone;
@@ -16,6 +16,7 @@ public class Cliente {
 	private String login;
 	private String senha;
 	private Double carteira;
+	private Carrinho carrinho;
 
 	public Cliente (String nome) {
 		setNome(nome);
@@ -37,12 +38,16 @@ public class Cliente {
 		return nome;
 	}
 	
-	public Date getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
-		
+	public void setDataNascimento(String dataNascimento) {
+		if (dataNascimento.toString().matches("[0-3][0-9]/[0-1][1-2]/[1-2][0-9][0-9][0-9]")) {
+			this.dataNascimento = dataNascimento;
+
+		} else {		
+			System.out.println("Data inválida!");
+		}
 	}
 	
 	public String getCpf() {

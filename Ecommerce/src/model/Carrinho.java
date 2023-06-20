@@ -1,5 +1,11 @@
 package model;
-
+/** Documentação
+ * 
+ * Esta classe organiza e gerencia os dados do carrinho
+ * 
+ * @author Nicolas Augusto Gazaniga
+ *
+ */
 public class Carrinho {
 
 	private Cliente cliente; // Associação entre classes

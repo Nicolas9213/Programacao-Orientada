@@ -1,5 +1,11 @@
 package model;
-
+/** Documentação
+ * 
+ * Esta classe organiza e gerencia os dados do produto
+ * 
+ * @author Nicolas Augusto Gazaniga
+ *
+ */
 public class Produto {
 	private String nome;
 	private Double preco;

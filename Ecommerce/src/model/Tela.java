@@ -15,7 +15,11 @@ import javax.swing.JMenuBar;
 import java.awt.TextArea;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JButton;
 
 public class Tela extends JFrame {
 
@@ -65,27 +69,31 @@ public class Tela extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Usu\u00E1rio");
 		lblNewLabel.setForeground(new Color(0, 0, 255));
-		lblNewLabel.setBounds(95, 176, 49, 14);
+		lblNewLabel.setBounds(95, 134, 49, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Senha");
 		lblNewLabel_1.setForeground(new Color(0, 0, 255));
-		lblNewLabel_1.setBounds(95, 218, 49, 14);
+		lblNewLabel_1.setBounds(95, 176, 49, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		txUsuario = new JTextField();
-		txUsuario.setBounds(154, 173, 148, 20);
+		txUsuario.setBounds(175, 131, 148, 20);
 		contentPane.add(txUsuario);
 		txUsuario.setColumns(10);
 		
 		txSenha = new JTextField();
-		txSenha.setBounds(154, 215, 148, 20);
+		txSenha.setBounds(175, 173, 148, 20);
 		contentPane.add(txSenha);
 		txSenha.setColumns(10);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"pinto", "penis", "rola"}));
-		comboBox.setBounds(222, 61, 30, 22);
-		contentPane.add(comboBox);
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Logado com sucesso!");
+			}
+		});
+		btnNewButton.setBounds(204, 204, 89, 23);
+		contentPane.add(btnNewButton);
 	}
 }

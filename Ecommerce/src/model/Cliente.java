@@ -1,5 +1,5 @@
 package model;
-/** Documentação
+/** Documentaï¿½ï¿½o
  * 
  * Esta classe organiza e gerencia os dados do cliente
  * 
@@ -26,11 +26,13 @@ public class Cliente {
 		
 	}
 	
-	public void setNome (String nome) {
+	public int setNome (String nome) {
 		if (nome.length() > 2 && nome.matches("[A-Za-z]+")) {
 			this.nome = nome;
+			return 1;
 		} else {
-			System.out.println("Nome inválido!");
+			System.out.println("Nome invalido!");
+			return 0;
 		}
 	}
 
@@ -41,12 +43,14 @@ public class Cliente {
 	public String getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(String dataNascimento) {
+	public int setDataNascimento(String dataNascimento) {
 		if (dataNascimento.toString().matches("[0-3][0-9]/[0-1][1-2]/[1-2][0-9][0-9][0-9]")) {
 			this.dataNascimento = dataNascimento;
+			return 1;
 
 		} else {		
-			System.out.println("Data inválida!");
+			System.out.println("Data invalida!");
+			return 0;
 		}
 	}
 	
@@ -54,11 +58,13 @@ public class Cliente {
 		return cpf;
 	}
 	
-	public void setCpf(String cpf) {
+	public int setCpf(String cpf) {
 		if (cpf.toString().matches("[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}")) {
 			this.cpf = cpf;
+			return 1;
 		} else {
-			System.out.println("CPF inválido!");
+			System.out.println("CPF invalido!");
+			return 0;
 		}
 	}
 	
@@ -66,11 +72,13 @@ public class Cliente {
 		return endereco;
 	}
 	
-	public void setEndereco(String endereco) {
+	public int setEndereco(String endereco) {
 		if (endereco.matches("[A-Za-z\\s]+")&& endereco.length() > 0) {
 			this.endereco = endereco;
+			return 1;
 		} else {
-			System.out.println("Endereço inválido!");
+			System.out.println("Endereï¿½o invalido!");
+			return 0;
 		}
 	}
 	
@@ -78,11 +86,13 @@ public class Cliente {
 		return telefone;
 	}
 	
-	public void setTelefone(String telefone) {
+	public int setTelefone(String telefone) {
 		if (telefone.matches("[0-9]{11}")) {
 			this.telefone = telefone;
+			return 1;
 		} else {
-			System.out.println("Telefone inválido!");
+			System.out.println("Telefone invalido!");
+			return 0;
 		}
 	}
 	
@@ -90,11 +100,13 @@ public class Cliente {
 		return email;
 	}
 	
-	public void setEmail(String email) {
+	public int setEmail(String email) {
 		if (email.matches("[a-z0-9]+[a-z0-9_\\.]*@[a-z]+\\.[a-z]+")) {
 			this.email = email;
+			return 1;
 		} else {
-			System.out.println("Email inválido!");
+			System.out.println("Email invalido!");
+			return 0;
 		}
 	}
 	
@@ -106,7 +118,7 @@ public class Cliente {
 		if (login.length() > 2 && login.matches("[A-Za-z]+")) {
 			this.login = login;
 		} else {
-			System.out.println("Login inválido!");
+			System.out.println("Login invalido!");
 		}
 	}
 	
@@ -118,7 +130,7 @@ public class Cliente {
 		if (senha.length() > 7 && nome.matches("[A-Za-z0-9]+")) {
 			this.senha = senha;
 		} else {
-			System.out.println("Nome inválido!");
+			System.out.println("Nome invalido!");
 		}
 	}
 	

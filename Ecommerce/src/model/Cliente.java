@@ -44,7 +44,7 @@ public class Cliente {
 		return dataNascimento;
 	}
 	public int setDataNascimento(String dataNascimento) {
-		if (dataNascimento.toString().matches("[0-3][0-9]/[0-1][1-2]/[1-2][0-9][0-9][0-9]")) {
+		if (dataNascimento.length() > 7){
 			this.dataNascimento = dataNascimento;
 			return 1;
 
@@ -126,11 +126,13 @@ public class Cliente {
 		return senha;
 	}
 	
-	public void setSenha(String senha) {
+	public int setSenha(String senha) {
 		if (senha.length() > 7 && nome.matches("[A-Za-z0-9]+")) {
 			this.senha = senha;
+			return 1;
 		} else {
-			System.out.println("Nome invalido!");
+			System.out.println("Senha invalida!");
+			return 0;
 		}
 	}
 	

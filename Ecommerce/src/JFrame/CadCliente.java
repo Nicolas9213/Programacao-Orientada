@@ -24,6 +24,7 @@ public class CadCliente extends JFrame {
 	private JTextField txEndereco;
 	private JTextField txTelefone;
 	private JTextField txEmail;
+	private JTextField txSenha;
 
 	/**
 	 * Launch the application.
@@ -117,15 +118,26 @@ public class CadCliente extends JFrame {
 				if (cliente.setNome(txNome.getText()) == 1 && cliente.setDataNascimento(txData.getText()) == 1 &&
 					cliente.setDataNascimento(txData.getText()) == 1 && cliente.setCpf(txCpf.getText()) == 1 &&
 					cliente.setEmail(txEmail.getText()) == 1 && cliente.setEndereco(txEndereco.getText()) == 1 && 
-					cliente.setTelefone(txTelefone.getText()) == 1) {
+					cliente.setTelefone(txTelefone.getText()) == 1 && cliente.setSenha(txSenha.getText()) == 1) {
 
 					JOptionPane.showMessageDialog(null, "Cliente cadastrado: " + nome);
+				} else {
+					JOptionPane.showMessageDialog(null, "Cliente não cadastrado");
+					dispose();
 				}
 			}
 			
 		});
-		btSalvar.setBounds(180, 197, 89, 23);
+		btSalvar.setBounds(175, 227, 89, 23);
 		contentPane.add(btSalvar);
+		
+		txSenha = new JTextField();
+		txSenha.setBounds(159, 197, 121, 20);
+		contentPane.add(txSenha);
+		txSenha.setColumns(10);
+		
+		JLabel lblNewLabel_6 = new JLabel("Senha:");
+		lblNewLabel_6.setBounds(10, 200, 46, 14);
+		contentPane.add(lblNewLabel_6);
 	}
-
 }

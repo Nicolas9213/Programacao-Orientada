@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 
 import model.Cliente;
@@ -21,10 +22,10 @@ public class CadCliente extends JFrame {
 	private JTextField txNome;
 	private JTextField txCpf;
 	private JTextField txData;
-	private JTextField txEndereco;
+	private JTextField txCep;
 	private JTextField txTelefone;
 	private JTextField txEmail;
-	private JTextField txSenha;
+	private JPasswordField txSenha;
 
 	/**
 	 * Launch the application.
@@ -64,49 +65,49 @@ public class CadCliente extends JFrame {
 		contentPane.add(txNome);
 		txNome.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("Nome:");
-		lblNewLabel.setBounds(10, 14, 46, 14);
-		contentPane.add(lblNewLabel);
+		JLabel lbNome = new JLabel("Nome:");
+		lbNome.setBounds(42, 14, 46, 14);
+		contentPane.add(lbNome);
 		
-		JLabel lblNewLabel_1 = new JLabel("Cpf:");
-		lblNewLabel_1.setBounds(10, 45, 46, 14);
-		contentPane.add(lblNewLabel_1);
+		JLabel lbCpf = new JLabel("Cpf:");
+		lbCpf.setBounds(42, 45, 46, 14);
+		contentPane.add(lbCpf);
 		
 		txData = new JTextField();
 		txData.setBounds(159, 73, 121, 20);
 		contentPane.add(txData);
 		txData.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Data de Nascimento:");
-		lblNewLabel_2.setBounds(10, 76, 107, 14);
-		contentPane.add(lblNewLabel_2);
+		JLabel lbData = new JLabel("Data de Nascimento:");
+		lbData.setBounds(42, 76, 107, 14);
+		contentPane.add(lbData);
 		
-		txEndereco = new JTextField();
-		txEndereco.setBounds(159, 104, 121, 20);
-		contentPane.add(txEndereco);
-		txEndereco.setColumns(10);
+		txCep = new JTextField();
+		txCep.setBounds(159, 104, 121, 20);
+		contentPane.add(txCep);
+		txCep.setColumns(10);
 		
-		JLabel lblNewLabel_3 = new JLabel("Endereço:");
-		lblNewLabel_3.setBounds(10, 107, 81, 14);
-		contentPane.add(lblNewLabel_3);
+		JLabel lbCep = new JLabel("Cep:");
+		lbCep.setBounds(42, 107, 81, 14);
+		contentPane.add(lbCep);
 		
 		txTelefone = new JTextField();
 		txTelefone.setBounds(159, 135, 121, 20);
 		contentPane.add(txTelefone);
 		txTelefone.setColumns(10);
 		
-		JLabel lblNewLabel_4 = new JLabel("Telefone:");
-		lblNewLabel_4.setBounds(10, 138, 46, 14);
-		contentPane.add(lblNewLabel_4);
+		JLabel lbTelefone = new JLabel("Telefone:");
+		lbTelefone.setBounds(42, 138, 46, 14);
+		contentPane.add(lbTelefone);
 		
 		txEmail = new JTextField();
 		txEmail.setBounds(159, 166, 121, 20);
 		contentPane.add(txEmail);
 		txEmail.setColumns(10);
 		
-		JLabel lblNewLabel_5 = new JLabel("Email:");
-		lblNewLabel_5.setBounds(10, 169, 46, 14);
-		contentPane.add(lblNewLabel_5);
+		JLabel lbEmail = new JLabel("Email:");
+		lbEmail.setBounds(42, 169, 46, 14);
+		contentPane.add(lbEmail);
 		
 		JButton btSalvar = new JButton("Salvar");
 		btSalvar.addActionListener(new ActionListener() {
@@ -117,10 +118,16 @@ public class CadCliente extends JFrame {
 				
 				if (cliente.setNome(txNome.getText()) == 1 && cliente.setDataNascimento(txData.getText()) == 1 &&
 					cliente.setDataNascimento(txData.getText()) == 1 && cliente.setCpf(txCpf.getText()) == 1 &&
-					cliente.setEmail(txEmail.getText()) == 1 && cliente.setEndereco(txEndereco.getText()) == 1 && 
+					cliente.setEmail(txEmail.getText()) == 1 && cliente.setCep(txCep.getText()) == 1 && 
 					cliente.setTelefone(txTelefone.getText()) == 1 && cliente.setSenha(txSenha.getText()) == 1) {
 
 					JOptionPane.showMessageDialog(null, "Cliente cadastrado: " + nome);
+					
+					contentPane.setVisible(false);
+					TelaLogin login = new TelaLogin();
+				
+					login.setVisible(true);
+					
 				} else {
 					JOptionPane.showMessageDialog(null, "Cliente não cadastrado");
 					dispose();
@@ -131,13 +138,13 @@ public class CadCliente extends JFrame {
 		btSalvar.setBounds(175, 227, 89, 23);
 		contentPane.add(btSalvar);
 		
-		txSenha = new JTextField();
-		txSenha.setBounds(159, 197, 121, 20);
+		txSenha = new JPasswordField();
+		txSenha.setBounds(159, 196, 121, 20);
 		contentPane.add(txSenha);
-		txSenha.setColumns(10);
 		
-		JLabel lblNewLabel_6 = new JLabel("Senha:");
-		lblNewLabel_6.setBounds(10, 200, 46, 14);
-		contentPane.add(lblNewLabel_6);
+		JLabel lbSenha = new JLabel("Senha:");
+		lbSenha.setBounds(42, 202, 46, 14);
+		contentPane.add(lbSenha);
+		
 	}
 }

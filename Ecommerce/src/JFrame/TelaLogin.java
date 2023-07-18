@@ -16,6 +16,7 @@ public class TelaLogin extends JFrame {
 	private JPanel contentPane;
 	private JTextField txxNome;
 	private JTextField txxSenha;
+	public JButton btCadastro;
 
 	/**
 	 * Launch the application.
@@ -55,8 +56,8 @@ public class TelaLogin extends JFrame {
 		contentPane.add(txxSenha);
 		txxSenha.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("Tela de Login:");
-		lblNewLabel.setBounds(177, 29, 93, 14);
+		JLabel lblNewLabel = new JLabel("Faça login:");
+		lblNewLabel.setBounds(192, 29, 93, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel txNome = new JLabel("Nome:");
@@ -68,10 +69,10 @@ public class TelaLogin extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Ainda não possui cadastro?");
-		lblNewLabel_3.setBounds(143, 202, 211, 14);
+		lblNewLabel_3.setBounds(131, 202, 241, 14);
 		contentPane.add(lblNewLabel_3);
 		
-		JButton btCadastro = new JButton("Cadastrar");
+		btCadastro = new JButton("Cadastrar");
 		btCadastro.setBounds(177, 227, 89, 23);
 		contentPane.add(btCadastro);
 		btCadastro.addActionListener(new ActionListener() {
@@ -86,11 +87,13 @@ public class TelaLogin extends JFrame {
 		JButton btLogin = new JButton("Login");
 		btLogin.setBounds(177, 152, 89, 23);
 		contentPane.add(btLogin);
+		
+		JLabel lblNewLabel_1 = new JLabel("SEJA BEM VINDO A NOSSA LOJA VIRTUAL!");
+		lblNewLabel_1.setBounds(112, 4, 287, 14);
+		contentPane.add(lblNewLabel_1);
 		btLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CadCliente cadastro = new CadCliente();
-
-				if (txxNome == cadastro(txNome.getText()))
 				
 				contentPane.setVisible(false);
 				TelaMenu menu = new TelaMenu();

@@ -10,7 +10,7 @@ public class Cliente {
 	private String nome;
 	private String dataNascimento;
 	private String cpf;
-	private String endereco;
+	private String cep;
 	private String telefone;
 	private String email;
 	private String login;
@@ -68,16 +68,16 @@ public class Cliente {
 		}
 	}
 	
-	public String getEndereco() {
-		return endereco;
+	public String getCep() {
+		return cep;
 	}
 	
-	public int setEndereco(String endereco) {
-		if (endereco.matches("[A-Za-z\\s]+")&& endereco.length() > 0) {
-			this.endereco = endereco;
+	public int setCep(String cep) {
+		if (cep.toString().matches("[0-9]{5}-[0-9]{3}")&& cep.length() > 0) {
+			this.cep = cep;
 			return 1;
 		} else {
-			System.out.println("Endere�o invalido!");
+			System.out.println("Endereco invalido!");
 			return 0;
 		}
 	}
